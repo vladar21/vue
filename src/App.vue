@@ -30,7 +30,7 @@
 <div :style="[baseStyleObject, successStyleObject]">Success Style</div>
 <div :style="[baseStyleObject, dangerStyleObject]">Danger Style</div> -->
 
-<h2 v-if="num === 0">
+<!-- <h2 v-if="num === 0">
   The number is zero
   </h2>
 <h2 v-else-if="num < 0">
@@ -49,10 +49,10 @@
     <h2>Vue</h2>
     <h2 v-show="showElement">Using v-show</h2>
     <h2 v-if="showElement">Using v-if</h2>
-  </template>
+  </template> -->
 
 
-  <h2 v-for="(name, index) in names" :key="name">{{ index }} {{ name }}</h2>
+  <!-- <h2 v-for="(name, index) in names" :key="name">{{ index }} {{ name }}</h2>
 
   <h2 v-for="(name, index) in fullNames" :key="name.last">{{ index }}{{name.first}} {{name.last}}</h2>
 
@@ -62,11 +62,20 @@
 
   </div>
   <h2 v-for="(value, key, index) in myInfo" :key="value"> {{ index }} {{ key }} {{ value }}</h2>
+
   <template v-for="name in names" :key="name">
     <h2>{{ name }}</h2>
      <hr />
+  </template> -->
 
-  </template>
+  <!-- <template v-for="name in names" :key="name">
+    <h2 v-if="name === 'Bruce'">{{ name }}</h2>
+  </template> -->
+
+
+  <h2>{{ 2 + 3 + 5 }}</h2>
+  <h2>{{ 5 + 10 + 15 }}</h2>
+
 </template>
 
 <script>
@@ -76,32 +85,33 @@ export default {
   data(){
     return {
 
-      great: "Hello",
-      name: "Batman",
-      num: 'c',
-      displey: true,
-      showElement: true,
-      names: ['Bruce', 'Clark', 'Diana'],
-      fullNames: [
-        { first: 'Bruce', last: 'Wayne' },
-        { first: 'Clark', last: 'Kent' },
-        { first: 'Princess', last: 'Diana' },
-      ],
-      actors: [
-        {
-          name: "Christian Bale",
-          movies: ['Batman', 'The Prestige'],
-        },
-        {
-          name: "Di Caprio",
-          movies: ['Titanic', 'Inception'],
-        },
-      ],
-      myInfo: {
-        name: 'Vishwas',
-        channel: 'Codevolution',
-        course: 'Vue 3',
-      }
+
+      // great: "Hello",
+      // name: "Batman",
+      // num: 'c',
+      // displey: true,
+      // showElement: true,
+      // names: ['Bruce', 'Clark', 'Diana'],
+      // fullNames: [
+      //   { first: 'Bruce', last: 'Wayne' },
+      //   { first: 'Clark', last: 'Kent' },
+      //   { first: 'Princess', last: 'Diana' },
+      // ],
+      // actors: [
+      //   {
+      //     name: "Christian Bale",
+      //     movies: ['Batman', 'The Prestige'],
+      //   },
+      //   {
+      //     name: "Di Caprio",
+      //     movies: ['Titanic', 'Inception'],
+      //   },
+      // ],
+      // myInfo: {
+      //   name: 'Vishwas',
+      //   channel: 'Codevolution',
+      //   course: 'Vue 3',
+      // }
       // channel: "<b>Codevolution</b>",
       // headingId: "heading",
       // isDisable: false,
@@ -132,6 +142,9 @@ export default {
       // }
     };
   },
+  methods: {
+    
+  }
 };
 </script>
 
