@@ -73,9 +73,58 @@
   </template> -->
 
 
-  <h2>{{ 2 + 3 + 5 }}</h2>
+  <!-- <h2>{{ 2 + 3 + 5 }}</h2>
   <h2>{{ 5 + 10 + 15 }}</h2>
+  <h2> Add method - {{ add(2,3,5) }}</h2>
+  <h2> Add method - {{ add(10,15,20) }}</h2>
+  <h2> Multipli method - {{ multiply(10) }}</h2> -->
 
+  <!-- <h2>{{ name }}</h2>
+
+  <div>
+    <button v-on:mouseover="changeName($event), increment(1, $event)">Change name</button>
+  </div>
+
+  <h2>{{ count }}</h2>
+  <div>
+    <button @click="increment(1, $event)">Increment</button>
+    <button @click="increment(5)">Increment 5</button>
+    <button @click="decrement(1)">Decrement</button>
+    <button @click="decrement(5)">Decrement 5</button>
+    </div> -->
+
+  <div>
+    <pre>
+      {{  JSON.stringify(formValues, null, 2) }}
+    </pre>
+  </div>
+  <form>
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" v-model="formValues.name">
+    </div>
+    <div>
+      <label for="profile">Profile Summary</label>
+      <textarea id="profile" v-model="formValues.profileSummary"></textarea>
+    </div>
+    <div>
+      <label for="country">Country</label>
+      <select id="country" v-model="formValues.country">
+        <option value="">Select a country</option>
+        <option value="india">India</option>
+        <option value="vietnam">Vietnam</option>
+        <option value="singapore">Singapore</option>
+      </select>
+    </div>
+    <div>
+      <label for="job-location">Job Location</label>
+      <select id="job-location" multiple v-model="formValues.jobLocation">
+        <option value="india">India</option>
+        <option value="vietnam">Vietnam</option>
+        <option value="singapore">Singapore</option>
+      </select>
+    </div>
+  </form>
 </template>
 
 <script>
@@ -84,6 +133,12 @@ export default {
   name: "App",
   data(){
     return {
+      formValues: {
+        name: '',
+        profileSummary: '',
+        country: '',
+        jobLocation: []
+      }
 
 
       // great: "Hello",
@@ -140,10 +195,32 @@ export default {
       //   backgroundColor: 'red',
       //   border: '1px solid darkred',
       // }
+
+      // baseMultiplier: 5,
+
+      // name: "Vishwas",
+      // count: 0
+
     };
   },
   methods: {
-    
+    // add(a, b, c) {
+    //   return a + b + c
+    // },
+    // multiply(num){
+    //   return num * this.baseMultiplier
+    // }
+    // increment(num, event){
+    //   this.count += num
+    //   console.log("Event", event)
+    // },
+    // decrement(num){
+    //   this.count -= num
+    // },
+    // changeName(event){
+    //   this.name = 'Batman'
+    //   console.log('Event', event)
+    // },
   }
 };
 </script>
@@ -153,9 +230,21 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
   margin-top: 60px;
+}
+
+label {
+  font-weight: bold;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+input + label {
+  font-weight: bold;
+  display: inline-felx;
+
 }
 
 /* .underline {
