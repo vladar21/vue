@@ -98,7 +98,7 @@
       {{  JSON.stringify(formValues, null, 2) }}
     </pre>
   </div>
-  <form>
+  <form @submit = "submitForm">
     <div>
       <label for="name">Name</label>
       <input type="text" id="name" v-model="formValues.name">
@@ -124,6 +124,26 @@
         <option value="singapore">Singapore</option>
       </select>
     </div>
+
+    <div>
+      <input type="checkbox" id="remoteWork" v-model="formValues.remoteWork" true-value="yes" false-value = "no" />
+      <label for="remoteWork">Open to remote work?</label>
+    </div>
+
+    <div>
+      <label>Years of Experience</label>
+      <input type="radio" id="0-2" value="0-2" v-model="formValues.yearsOfExperience" />
+      <label for="0-2">0-2</label>
+      <input type="radio" id="3-5" value="3-5" v-model="formValues.yearsOfExperience" />
+      <label for="3-5">3-5</label>
+      <input type="radio" id="6-10" value="6-10" v-model="formValues.yearsOfExperience" />
+      <label for="6-10">6-10</label>
+    </div>
+
+    <div>
+      <button>Submit</button>
+    </div>
+
   </form>
 </template>
 
@@ -137,7 +157,10 @@ export default {
         name: '',
         profileSummary: '',
         country: '',
-        jobLocation: []
+        jobLocation: [],
+        remoteWork: "no",
+        skillSet: [],
+        yearsOfExperience: ''
       }
 
 
@@ -221,6 +244,10 @@ export default {
     //   this.name = 'Batman'
     //   console.log('Event', event)
     // },
+    submitForm(event){
+      event.preventDefault();
+      console.log('Form values', this.formValues)
+    }
   }
 };
 </script>
